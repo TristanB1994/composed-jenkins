@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+        jenkins:
+                build: .
+                ports:
+                        - "8080:8080"
+                        - "2346:2346"
+                        - "4243:4243"
+                        - "50000:50000"
+                        - "49170-60999:49170-60999"
+                volumes:
+                        - "/jenkins-data:/var/jenkins_home"
+                        - "/var/run/docker.sock:/var/run/docker.sock"
